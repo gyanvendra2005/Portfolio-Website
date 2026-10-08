@@ -9,8 +9,12 @@
 .work-section {
   transition: 0s;
   height: 100vh;
+  min-height: 700px;
   box-sizing: border-box;
   will-change: transform;
+  overflow: hidden;
+  position: relative;
+  clear: both;
 }
 .work-container {
   margin: auto;
@@ -20,7 +24,7 @@
   align-content: stretch;
 }
 .work-flex {
-  width: 100%;
+  width: max-content;
   display: flex;
   height: 100%;
   margin-left: -80px;
@@ -85,6 +89,13 @@
 .work-info > p {
   width: 90%;
 }
+.work-desc {
+  font-size: 13px !important;
+  line-height: 1.5;
+  color: #9e9e9e !important;
+  margin-top: 8px !important;
+  font-weight: 300 !important;
+}
 .work-image {
   display: flex;
   width: 100%;
@@ -92,6 +103,7 @@
 }
 .work-image-in {
   position: relative;
+  width: 100%;
 }
 .work-link {
   position: absolute;
@@ -109,6 +121,7 @@
     inset 0px 0px 10px 0px #393939;
   transition: 0.3s;
   opacity: 0;
+  z-index: 10;
 }
 .work-image a:hover {
   color: inherit;
@@ -126,8 +139,12 @@
   object-fit: cover;
 }
 .work-image img {
-  max-width: 100%;
-  max-height: 350px;
+  width: 100%;
+  max-height: 320px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
 }
 @media only screen and (max-height: 900px) {
   .work-image img {
@@ -165,7 +182,7 @@
     font-size: 50px;
   }
 }
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1024px) {
   .work-box {
     width: 350px;
     padding: 30px;

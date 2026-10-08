@@ -20,18 +20,21 @@ const Navbar = () => {
       ignoreMobileResize: true,
     });
 
+    ScrollTrigger.refresh();
     smoother.scrollTop(0);
     smoother.paused(true);
 
-    let links = document.querySelectorAll(".header ul a");
+    const links = document.querySelectorAll(".header ul a[data-href]");
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
+      const element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {
           e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
+          const target = e.currentTarget as HTMLAnchorElement;
+          const section = target.getAttribute("data-href");
+          if (section) {
+            smoother.scrollTo(section, true, "top top");
+          }
         }
       });
     });
@@ -43,14 +46,14 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          Logo
+          Gyanvendra.
         </a>
         <a
-          href="mailto:example@mail.com"
+          href="mailto:gyanvendras2004@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          example@mail.com
+          gyanvendras2004@gmail.com
         </a>
         <ul>
           <li>
@@ -64,8 +67,28 @@ const Navbar = () => {
             </a>
           </li>
           <li>
+            <a data-href="#career" href="#career">
+              <HoverLinks text="EXPERIENCE" />
+            </a>
+          </li>
+          <li>
+            <a data-href="#skills" href="#skills">
+              <HoverLinks text="SKILLS" />
+            </a>
+          </li>
+          <li>
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+            >
+              <HoverLinks text="RESUME ↗" />
             </a>
           </li>
         </ul>

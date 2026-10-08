@@ -25,7 +25,7 @@ const WhatIDo = () => {
     };
   }, []);
   return (
-    <div className="whatIDO">
+    <div className="whatIDO" id="skills">
       <div className="what-box">
         <h2 className="title">
           W<span className="hat-h2">HAT</span>
@@ -87,24 +87,25 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h3>FULL-STACK</h3>
+              <h4>Web Applications & Storefronts</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Building fast, responsive, and reliable digital experiences from concept to production. Specializing in the MERN stack, high-conversion e-commerce storefronts, business platforms, clean RESTful backend architectures, and database design.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
+                <div className="what-tags">React.js</div>
                 <div className="what-tags">Next.js</div>
+                <div className="what-tags">TypeScript</div>
+                <div className="what-tags">JavaScript</div>
+                <div className="what-tags">Node.js</div>
                 <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">PostgreSQL</div>
+                <div className="what-tags">Tailwind CSS</div>
+                <div className="what-tags">REST APIs</div>
+                <div className="what-tags">Prisma ORM</div>
+                <div className="what-tags">C++</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -128,22 +129,25 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h3>REAL-TIME & CLOUD</h3>
+              <h4>Interactive Systems & DevOps</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Architecting real-time communication systems, secure cloud deployments, and AI-powered applications. Experienced in Socket.IO pub/sub, WebRTC audio/video calling, Cloudflare WAF bot mitigation, AWS deployments, and multi-agent RAG workflows.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">Socket.IO</div>
+                <div className="what-tags">WebRTC</div>
+                <div className="what-tags">Redis</div>
+                <div className="what-tags">AWS</div>
+                <div className="what-tags">Cloudflare WAF</div>
+                <div className="what-tags">Google reCAPTCHA</div>
+                <div className="what-tags">Docker</div>
+                <div className="what-tags">LangChain</div>
+                <div className="what-tags">LangGraph</div>
+                <div className="what-tags">RAG & Vector DB</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">Linux</div>
               </div>
               <div className="what-arrow"></div>
             </div>

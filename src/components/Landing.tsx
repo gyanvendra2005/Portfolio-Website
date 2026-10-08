@@ -9,21 +9,33 @@ const Landing = ({ children }: PropsWithChildren) => {
           <div className="landing-intro">
             <h2>Hello! I'm</h2>
             <h1>
-              MONCY
+              GYANVENDRA
               <br />
-              <span>YOHANNAN</span>
+              <span>SINGH</span>
             </h1>
+            <p className="landing-tagline">
+              Building modern web experiences that are fast, functional, and built to solve real problems.
+            </p>
           </div>
           <div className="landing-info">
-            <h3>A Creative</h3>
+            <h3>Full-Stack</h3>
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Designer</div>
-              <div className="landing-h2-2">Developer</div>
+              <div className="landing-h2-1">Developer</div>
+              <div className="landing-h2-2">Engineer</div>
             </h2>
             <h2>
-              <div className="landing-h2-info">Developer</div>
-              <div className="landing-h2-info-1">Designer</div>
+              <div className="landing-h2-info">Engineer</div>
+              <div className="landing-h2-info-1">Developer</div>
             </h2>
+            <div className="landing-actions">
+              <a href="#work" className="landing-cta-btn primary" data-cursor="disable">
+                View My Work <span>→</span>
+              </a>
+              <a href="#contact" className="landing-cta-btn secondary" data-cursor="disable">
+                Let's Work Together <span>↗</span>
+              </a>
+            </div>
+            <p className="landing-credibility">MERN STACK · SOCKET.IO · WEBRTC · AWS · REST APIs</p>
           </div>
         </div>
         {children}
