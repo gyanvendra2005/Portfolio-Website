@@ -1,11 +1,18 @@
-import { SplitText } from "gsap-trial/SplitText";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { smoother } from "../Navbar";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
-  smoother.paused(false);
+  if (smoother) {
+    smoother.paused(false);
+  }
+  ScrollTrigger.refresh();
   document.getElementsByTagName("main")[0].classList.add("main-active");
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 1000);
   gsap.to("body", {
     backgroundColor: "#0b080c",
     duration: 0.5,

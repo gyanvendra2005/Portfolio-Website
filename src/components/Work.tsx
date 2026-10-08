@@ -102,46 +102,50 @@ const projects = [
 const Work = () => {
   useGSAP(() => {
     const getScrollAmount = () => {
-      const workFlex = document.querySelector(".work-flex") as HTMLElement;
-      if (!workFlex) return 3000;
-      return Math.max(0, workFlex.scrollWidth - window.innerWidth + 120);
+      const boxes = document.querySelectorAll<HTMLElement>(".work-box");
+      const container = document.querySelector<HTMLElement>(".work-container");
+      if (!boxes.length || !container) return 3000;
+
+      const boxWidth = boxes[0].offsetWidth;
+      const totalWidth = boxWidth * boxes.length;
+      const containerWidth = container.clientWidth;
+      return Math.max(0, totalWidth - containerWidth + 80);
     };
 
-    const isSmooth = !!document.querySelector("#smooth-content");
+    const scrollAmount = getScrollAmount();
 
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
-        end: () => `+=${getScrollAmount()}`,
+        end: `+=${scrollAmount}`,
         scrub: 1,
         pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        pinType: isSmooth ? "transform" : "fixed",
         id: "work",
       },
     });
 
     timeline.to(".work-flex", {
-      x: () => -getScrollAmount(),
+      x: -scrollAmount,
       ease: "none",
     });
 
+    const handleRefresh = () => {
+      ScrollTrigger.refresh();
+    };
+
     const images = document.querySelectorAll(".work-section img");
     images.forEach((img) => {
-      img.addEventListener("load", () => {
-        ScrollTrigger.refresh();
-      });
+      img.addEventListener("load", handleRefresh);
     });
 
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 500);
+    const timer = setTimeout(handleRefresh, 500);
 
     return () => {
       clearTimeout(timer);
+      images.forEach((img) => {
+        img.removeEventListener("load", handleRefresh);
+      });
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
     };

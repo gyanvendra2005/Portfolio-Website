@@ -103,9 +103,10 @@
   position: absolute;
   max-width: 1920px;
   max-height: 1080px;
-  transform: translateX(-50%);
   width: 100%;
-  left: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 0;
   bottom: 50px;
   pointer-events: inherit;
@@ -297,6 +298,9 @@ h2.landing-info-h2 {
     bottom: 0;
     z-index: 11;
     position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
   .character-model::after,
   .character-model::before {
@@ -304,27 +308,8 @@ h2.landing-info-h2 {
   }
   .landing-intro {
     top: 50%;
-    left: 2%;
-    right: auto;
-    transform: translateY(-50%);
-    max-width: 380px;
-  }
-
-  .landing-info {
-    bottom: auto;
-    top: 51%;
-    z-index: inherit;
-    text-align: left;
-    transform: translateY(-50%);
-    right: 2%;
     left: auto;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .landing-intro {
-    top: 50%;
-    left: 4%;
-    right: auto;
+    right: 64%;
     transform: translateY(-50%);
     max-width: 420px;
   }
@@ -335,11 +320,36 @@ h2.landing-info-h2 {
     z-index: inherit;
     text-align: left;
     transform: translateY(-50%);
-    right: 4%;
+    right: auto;
+    left: 64%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .landing-intro {
+    top: 50%;
     left: auto;
+    right: 68%;
+    transform: translateY(-50%);
+    max-width: 460px;
+  }
+
+  .landing-info {
+    bottom: auto;
+    top: 51%;
+    z-index: inherit;
+    text-align: left;
+    transform: translateY(-50%);
+    right: auto;
+    left: 68%;
   }
 }
 @media screen and (min-width: 1600px) {
+  .landing-intro {
+    right: 70%;
+  }
+  .landing-info {
+    left: 70%;
+  }
   .landing-intro h2 {
     font-size: 35px;
   }
